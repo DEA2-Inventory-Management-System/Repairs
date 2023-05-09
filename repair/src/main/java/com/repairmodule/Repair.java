@@ -1,44 +1,32 @@
 package com.repairmodule;
 
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity //identifies a class as an entity class
+@Data
+@Getter //to generate default getters and setters for private fields.
+@Setter
+@AllArgsConstructor //generates a constructor with one parameter for every field in the class.
+@NoArgsConstructor //used to generate the no-argument constructor for a class
+@Builder //produces complex builder APIs for the classes.
 public class Repair {
-    private int repairId;
+    @Id //specifies the primary key of an entity
+    @Column //enables the mapping between the entity attribute and the database column
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    @Column
     private int category;
+
+    @Column
     private String description;
+
+    @Column
     private int status;
 
-    //constructors
-    public Repair() {
-        super();
-    }
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    private String date;
 
-    public Repair(int repairId, int category, String description, int status) {
-        super();
-        this.repairId = repairId;
-        this.category = category;
-        this.description = description;
-        this.status = status;
-    }
-
-    //getters and setters
-    public void setRepairId(int repairId) {
-        this.repairId = repairId;
-    }
-    public int getCategory() {
-        return category;
-    }
-    public void setCategory(int category) {
-        this.category = category;
-    }
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    public int getStatus() {
-        return status;
-    }
-    public void setStatus(int status) {
-        this.status = status;
-    }
 }
