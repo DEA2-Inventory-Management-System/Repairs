@@ -1,4 +1,9 @@
 package com.repairmodule;
 
-public class RepairRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RepairRepository {
+
+    Iterable<Object> findAll();
+    Repair save(Repair repair);
 }
