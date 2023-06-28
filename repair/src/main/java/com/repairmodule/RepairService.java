@@ -27,8 +27,8 @@ public class RepairService {
 
     public ResponseEntity<Object> deleteRepair(int id) {
         try {
-            //check if employee exist in database
-//            Invoice invoice = getRequestBody(invoiceNum);
+            //check if repair exist in database
+//            Repair repair = getRequestBody(id);
             Optional<Repair> repair = repairRepository.findById(id);
             Repair repair1 = repair.get();
             if (repair1 != null) {
@@ -42,7 +42,7 @@ public class RepairService {
     }
 
     public ResponseEntity<Object> updateRepair(int id, Repair repair) {
-        //check if employee exist in database
+        //check if repair exist in database
         Optional<Repair> repairObj = repairRepository.findById(id);
         Repair repair1 = repairObj.get();
         if (repairObj != null) {
