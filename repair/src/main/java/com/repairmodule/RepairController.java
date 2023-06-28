@@ -1,6 +1,7 @@
 package com.repairmodule;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,16 @@ public class RepairController {
     @GetMapping("/repair")
     private List<Repair> getRepair(){
         return repairService.getRepair();
+    }
+
+    @DeleteMapping("/repair")
+    private ResponseEntity<Object> deleteRepair(@PathVariable("id") int id){
+        return repairService.deleteRepair(id);
+    }
+
+    @PutMapping("/repair/{id}")
+    private ResponseEntity<Object> updateRepair(@PathVariable("id") int id,@RequestBody Repair repair){
+        return repairService.updateRepair(id,repair);
     }
 
 
