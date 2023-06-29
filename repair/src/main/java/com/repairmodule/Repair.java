@@ -29,4 +29,8 @@ public class Repair {
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private String date;
 
+    //this one got created
+    public Repair get() {
+        return null;
+    }
 }
