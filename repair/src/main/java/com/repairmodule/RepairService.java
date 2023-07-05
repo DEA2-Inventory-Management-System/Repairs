@@ -30,8 +30,8 @@ public class RepairService {
             //check if repair exist in database
 //            Repair repair = getRequestBody(id);
             //optional was removed from here
-            // Optional<Repair> repair = repairRepository.findById(id);
-            Repair repair = repairRepository.findById(id);
+            Optional<Repair> repair = Optional.ofNullable(repairRepository.findById(id));
+            //Repair repair = repairRepository.findById(id);
             Repair repair1 = repair.get();
             if (repair1 != null) {
                 repairRepository.deleteById(repair1.getId());
@@ -47,7 +47,7 @@ public class RepairService {
         //check if repair exist in database
         //optional was removed from here
         // Optional<Repair> repairObj = repairRepository.findById(id);
-        Repair repairObj = repairRepository.findById(id);
+        Optional<Repair> repairObj = Optional.ofNullable(repairRepository.findById(id));
         Repair repair1 = repairObj.get();
         if (repairObj != null) {
             repair1.setCategory(repair.getCategory());
