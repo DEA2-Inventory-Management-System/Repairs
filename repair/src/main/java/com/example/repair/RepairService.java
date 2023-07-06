@@ -1,5 +1,7 @@
-package com.repairmodule;
+package com.example.repair;
 
+import com.example.repair.Repair;
+import com.example.repair.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

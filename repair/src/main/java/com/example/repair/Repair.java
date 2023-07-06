@@ -1,4 +1,4 @@
-package com.repairmodule;
+package com.example.repair;
 
 import jakarta.persistence.*;
 import lombok.*;
